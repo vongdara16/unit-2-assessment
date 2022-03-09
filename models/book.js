@@ -3,8 +3,14 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema
 
 const bookSchema = new Schema({
-  name: String,
-  isRead: false
+  title: {
+    type: String,
+    required: true
+  },
+  read: {
+    type: Boolean, 
+    default: false
+  }
 })
 
 const Book = mongoose.model('Book', bookSchema)
